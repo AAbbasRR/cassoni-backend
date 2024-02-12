@@ -1,0 +1,1 @@
+from .inquery import PublicAddInqueryAPIView

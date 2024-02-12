@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-12 16:39+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: app_inquery/apps.py:8
+msgid "App InQuery"
+msgstr "اپلیکیشن درخواست ها"
+
+#: app_inquery/apps.py:9
+msgid "App InQueries"
+msgstr "اپلیکیشن درخواست ها"
+
+#: app_inquery/models/inquery.py:13
+msgid "InQuery"
+msgstr "درخواست"
+
+#: app_inquery/models/inquery.py:14
+msgid "InQueries"
+msgstr "درخواست ها"
+
+#: app_inquery/models/inquery.py:20
+msgid "Mobile"
+msgstr "موبایل"
+
+#: app_inquery/models/inquery.py:25 app_settings/models/contact.py:18
+msgid "Email"
+msgstr "ایمیل"
+
+#: app_settings/admin/base.py:9 app_settings/admin/base.py:10
+#: app_settings/admin/base.py:11
+msgid "Admin Panel"
+msgstr "ادمین پنل"
+
+#: app_settings/apps.py:8
+msgid "App Setting"
+msgstr "اپلیکیشن تنظیمات"
+
+#: app_settings/apps.py:9
+msgid "App Settings"
+msgstr "اپلیکیشن تنظیمات"
+
+#: app_settings/models/contact.py:13 app_settings/models/contact.py:14
+msgid "Contact"
+msgstr "ارتباط با ما"
+
+#: app_settings/models/contact.py:17
+msgid "Phone"
+msgstr "شماره تماس"
+
+#: app_settings/models/contact.py:19
+msgid "Address"
+msgstr "آدرس"
+
+#: app_settings/models/contact.py:24 app_settings/models/options.py:25
+msgid "Type"
+msgstr "نوع"
+
+#: app_settings/models/contact.py:28 app_settings/models/options.py:29
+msgid "Value"
+msgstr "مقدار"
+
+#: app_settings/models/options.py:15
+msgid "Option"
+msgstr "بخش های سایت"
+
+#: app_settings/models/options.py:16
+msgid "Options"
+msgstr "بخش های سایت"
+
+#: app_settings/models/options.py:19
+msgid "OurStory"
+msgstr "درباره ما"
+
+#: app_settings/models/social_media.py:13
+#: app_settings/models/social_media.py:14
+msgid "Social Media"
+msgstr "سوشیال مدیا"
+
+#: app_settings/models/social_media.py:17
+msgid "Telegram"
+msgstr "تلگرام"
+
+#: app_settings/models/social_media.py:18
+msgid "WhatsApp"
+msgstr "واتساپ"
+
+#: app_settings/models/social_media.py:19
+msgid "YouTube"
+msgstr "یوتیوب"
+
+#: app_settings/models/social_media.py:20
+msgid "Instagram"
+msgstr "اینستاگرام"
+
+#: app_settings/models/social_media.py:21
+msgid "Twitter"
+msgstr "توییتر"
+
+#: app_settings/models/social_media.py:27
+msgid "Application"
+msgstr "اپلیکیشن"
+
+#: app_settings/models/social_media.py:30
+msgid "Application URL"
+msgstr "آدرس اپلیکیشن"
+
+#: app_settings/models/video.py:18 app_settings/models/video.py:19
+msgid "Container Video"
+msgstr "ویدیو صفحه اصلی"
+
+#: app_settings/models/video.py:24
+msgid "Video File"
+msgstr "فایل ویدیو"
+
+#: app_settings/models/video.py:28
+msgid "Have Filter Black & White?"
+msgstr "آیا فیلتر سیاه سفید روی آن اعمال شود؟"
+
+#: config/settings.py:133
+msgid "English"
+msgstr "انگلیسی"
+
+#: config/settings.py:134
+msgid "Persian"
+msgstr "فارسی"
+
+#: templates/admin/base.html:36
+msgid "View site"
+msgstr "مشاهده سایت"
+
+#: templates/admin/base.html:41
+msgid "Documentation"
+msgstr "مستندات"
+
+#: templates/admin/base.html:45
+msgid "Change password"
+msgstr "تغییر رمزعبور"
+
+#: templates/admin/base.html:49
+msgid "Log out"
+msgstr "خروج"
+
+#: utils/base_errors.py:17
+msgid "URL Not Found."
+msgstr "آدرس پیدا نشد"
+
+#: utils/base_errors.py:18
+msgid "Server Error."
+msgstr "مشکلی در سرویس دهنده پیش آمده است"
+
+#: utils/base_errors.py:21
+msgid "Unsupported file extension. Please upload a video file."
+msgstr "فرمت فایل پشتیبانی نمیشود، لطفا فایل ویدیو را مجدد آپلود کنید"
+
+#: utils/base_errors.py:24
+#, python-brace-format
+msgid "{object} Not Found"
+msgstr "{object} پیدا نشد"
+
+#: utils/base_errors.py:25
+#, python-brace-format
+msgid "parameter {param_name} is required"
+msgstr "ارسال {param_name} ضروری است"
+
+#: utils/db/models/date.py:11
+msgid "Created Time"
+msgstr "زمان ایجاد"
+
+#: utils/db/models/date.py:12
+msgid "Updated Time"
+msgstr "زمان آخرین تغییر"
