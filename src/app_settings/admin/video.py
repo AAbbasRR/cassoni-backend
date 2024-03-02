@@ -6,7 +6,7 @@ from app_settings.models import ContainerVideoModel
 
 
 class ContainerVideoAdmin(admin.ModelAdmin):
-    list_display = ("video_preview", "filter_bw")
+    list_display = ("id", "video_preview", "filter_bw")
 
     def video_preview(self, obj):
         # Change 'video_field' to the name of your video field

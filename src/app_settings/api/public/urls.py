@@ -23,4 +23,9 @@ urlpatterns = [
         PublicContainerVideoAPIView.as_view(),
         name="list_video_public",
     ),
+    path(
+        "image/list/",
+        PublicContainerImageAPIView.as_view(),
+        name="list_image_public",
+    ),
 ]
