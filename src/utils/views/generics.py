@@ -29,27 +29,31 @@ class CustomRetrieveAPIView(generics.RetrieveAPIView):
     lookup_fields = [
         "pk",
     ]
+    lookup_in_parameter = True
     object_name = ""
 
     def get_object(self):
-        param_error = False
-        filter = {}
-        for lookup_field in self.lookup_fields:
-            param_value = self.request.GET.get(lookup_field, None)
-            if param_value is None or param_value == "":
-                param_error = True
-            else:
-                filter[lookup_field] = param_value
-                param_error = False
-                break
-        if param_error:
-            raise ParameterRequiredException(self.lookup_fields)
-        queryset = self.filter_queryset(self.get_queryset())
-        try:
-            obj = get_object_or_404(queryset, **filter)
-            return obj
-        except Http404:
-            raise NotFoundObjectException(object_name=self.object_name)
+        if self.lookup_in_parameter:
+            param_error = False
+            filter = {}
+            for lookup_field in self.lookup_fields:
+                param_value = self.request.GET.get(lookup_field, None)
+                if param_value is None or param_value == "":
+                    param_error = True
+                else:
+                    filter[lookup_field] = param_value
+                    param_error = False
+                    break
+            if param_error:
+                raise ParameterRequiredException(self.lookup_fields)
+            queryset = self.filter_queryset(self.get_queryset())
+            try:
+                obj = get_object_or_404(queryset, **filter)
+                return obj
+            except Http404:
+                raise NotFoundObjectException(object_name=self.object_name)
+        else:
+            return super().get_object()
 
 
 class CustomRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
@@ -62,54 +66,62 @@ class CustomRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
     lookup_fields = [
         "pk",
     ]
+    lookup_in_parameter = True
     object_name = ""
 
     def get_object(self):
-        param_error = False
-        filter = {}
-        for lookup_field in self.lookup_fields:
-            param_value = self.request.GET.get(lookup_field, None)
-            if param_value is None or param_value == "":
-                param_error = True
-            else:
-                filter[lookup_field] = param_value
-                param_error = False
-                break
-        if param_error:
-            raise ParameterRequiredException(self.lookup_fields)
-        queryset = self.filter_queryset(self.get_queryset())
-        try:
-            obj = get_object_or_404(queryset, **filter)
-            return obj
-        except Http404:
-            raise NotFoundObjectException(object_name=self.object_name)
+        if self.lookup_in_parameter:
+            param_error = False
+            filter = {}
+            for lookup_field in self.lookup_fields:
+                param_value = self.request.GET.get(lookup_field, None)
+                if param_value is None or param_value == "":
+                    param_error = True
+                else:
+                    filter[lookup_field] = param_value
+                    param_error = False
+                    break
+            if param_error:
+                raise ParameterRequiredException(self.lookup_fields)
+            queryset = self.filter_queryset(self.get_queryset())
+            try:
+                obj = get_object_or_404(queryset, **filter)
+                return obj
+            except Http404:
+                raise NotFoundObjectException(object_name=self.object_name)
+        else:
+            return super().get_object()
 
 
 class CustomRetrieveDestroyAPIView(generics.RetrieveDestroyAPIView):
     lookup_fields = [
         "pk",
     ]
+    lookup_in_parameter = True
     object_name = ""
 
     def get_object(self):
-        param_error = False
-        filter = {}
-        for lookup_field in self.lookup_fields:
-            param_value = self.request.GET.get(lookup_field, None)
-            if param_value is None or param_value == "":
-                param_error = True
-            else:
-                filter[lookup_field] = param_value
-                param_error = False
-                break
-        if param_error:
-            raise ParameterRequiredException(self.lookup_fields)
-        queryset = self.filter_queryset(self.get_queryset())
-        try:
-            obj = get_object_or_404(queryset, **filter)
-            return obj
-        except Http404:
-            raise NotFoundObjectException(object_name=self.object_name)
+        if self.lookup_in_parameter:
+            param_error = False
+            filter = {}
+            for lookup_field in self.lookup_fields:
+                param_value = self.request.GET.get(lookup_field, None)
+                if param_value is None or param_value == "":
+                    param_error = True
+                else:
+                    filter[lookup_field] = param_value
+                    param_error = False
+                    break
+            if param_error:
+                raise ParameterRequiredException(self.lookup_fields)
+            queryset = self.filter_queryset(self.get_queryset())
+            try:
+                obj = get_object_or_404(queryset, **filter)
+                return obj
+            except Http404:
+                raise NotFoundObjectException(object_name=self.object_name)
+        else:
+            return super().get_object()
 
 
 class CustomRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -123,81 +135,93 @@ class CustomRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     lookup_fields = [
         "pk",
     ]
+    lookup_in_parameter = True
     object_name = ""
 
     def get_object(self):
-        param_error = False
-        filter = {}
-        for lookup_field in self.lookup_fields:
-            param_value = self.request.GET.get(lookup_field, None)
-            if param_value is None or param_value == "":
-                param_error = True
-            else:
-                filter[lookup_field] = param_value
-                param_error = False
-                break
-        if param_error:
-            raise ParameterRequiredException(self.lookup_fields)
-        queryset = self.filter_queryset(self.get_queryset())
-        try:
-            obj = get_object_or_404(queryset, **filter)
-            return obj
-        except Http404:
-            raise NotFoundObjectException(object_name=self.object_name)
+        if self.lookup_in_parameter:
+            param_error = False
+            filter = {}
+            for lookup_field in self.lookup_fields:
+                param_value = self.request.GET.get(lookup_field, None)
+                if param_value is None or param_value == "":
+                    param_error = True
+                else:
+                    filter[lookup_field] = param_value
+                    param_error = False
+                    break
+            if param_error:
+                raise ParameterRequiredException(self.lookup_fields)
+            queryset = self.filter_queryset(self.get_queryset())
+            try:
+                obj = get_object_or_404(queryset, **filter)
+                return obj
+            except Http404:
+                raise NotFoundObjectException(object_name=self.object_name)
+        else:
+            return super().get_object()
 
 
 class CustomUpdateAPIView(generics.UpdateAPIView):
     lookup_fields = [
         "pk",
     ]
+    lookup_in_parameter = True
     object_name = ""
 
     def get_object(self):
-        param_error = False
-        filter = {}
-        for lookup_field in self.lookup_fields:
-            param_value = self.request.GET.get(lookup_field, None)
-            if param_value is None or param_value == "":
-                param_error = True
-            else:
-                filter[lookup_field] = param_value
-                param_error = False
-                break
-        if param_error:
-            raise ParameterRequiredException(self.lookup_fields)
-        queryset = self.filter_queryset(self.get_queryset())
-        try:
-            obj = get_object_or_404(queryset, **filter)
-            return obj
-        except Http404:
-            raise NotFoundObjectException(object_name=self.object_name)
+        if self.lookup_in_parameter:
+            param_error = False
+            filter = {}
+            for lookup_field in self.lookup_fields:
+                param_value = self.request.GET.get(lookup_field, None)
+                if param_value is None or param_value == "":
+                    param_error = True
+                else:
+                    filter[lookup_field] = param_value
+                    param_error = False
+                    break
+            if param_error:
+                raise ParameterRequiredException(self.lookup_fields)
+            queryset = self.filter_queryset(self.get_queryset())
+            try:
+                obj = get_object_or_404(queryset, **filter)
+                return obj
+            except Http404:
+                raise NotFoundObjectException(object_name=self.object_name)
+        else:
+            return super().get_object()
 
 
 class CustomDestroyAPIView(generics.DestroyAPIView):
     lookup_fields = [
         "pk",
     ]
+    lookup_in_parameter = True
     object_name = ""
 
     def get_object(self):
-        param_error = False
-        filter = {}
-        for lookup_field in self.lookup_fields:
-            param_value = self.request.GET.get(lookup_field, None)
-            if param_value is None or param_value == "":
-                param_error = True
-            else:
-                filter[lookup_field] = param_value
-                param_error = False
-                break
-        if param_error:
-            raise ParameterRequiredException(self.lookup_fields)
-        queryset = self.filter_queryset(self.get_queryset())
-        try:
-            obj = get_object_or_404(queryset, **filter)
-            return obj
-        except Http404:
-            raise NotFoundObjectException(object_name=self.object_name)
+        if self.lookup_in_parameter:
+            param_error = False
+            filter = {}
+            for lookup_field in self.lookup_fields:
+                param_value = self.request.GET.get(lookup_field, None)
+                if param_value is None or param_value == "":
+                    param_error = True
+                else:
+                    filter[lookup_field] = param_value
+                    param_error = False
+                    break
+            if param_error:
+                raise ParameterRequiredException(self.lookup_fields)
+            queryset = self.filter_queryset(self.get_queryset())
+            try:
+                obj = get_object_or_404(queryset, **filter)
+                return obj
+            except Http404:
+                raise NotFoundObjectException(object_name=self.object_name)
+        else:
+            return super().get_object()
 
 
 class CustomUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -210,27 +234,31 @@ class CustomUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     lookup_fields = [
         "pk",
     ]
+    lookup_in_parameter = True
     object_name = ""
 
     def get_object(self):
-        param_error = False
-        filter = {}
-        for lookup_field in self.lookup_fields:
-            param_value = self.request.GET.get(lookup_field, None)
-            if param_value is None or param_value == "":
-                param_error = True
-            else:
-                filter[lookup_field] = param_value
-                param_error = False
-                break
-        if param_error:
-            raise ParameterRequiredException(self.lookup_fields)
-        queryset = self.filter_queryset(self.get_queryset())
-        try:
-            obj = get_object_or_404(queryset, **filter)
-            return obj
-        except Http404:
-            raise NotFoundObjectException(object_name=self.object_name)
+        if self.lookup_in_parameter:
+            param_error = False
+            filter = {}
+            for lookup_field in self.lookup_fields:
+                param_value = self.request.GET.get(lookup_field, None)
+                if param_value is None or param_value == "":
+                    param_error = True
+                else:
+                    filter[lookup_field] = param_value
+                    param_error = False
+                    break
+            if param_error:
+                raise ParameterRequiredException(self.lookup_fields)
+            queryset = self.filter_queryset(self.get_queryset())
+            try:
+                obj = get_object_or_404(queryset, **filter)
+                return obj
+            except Http404:
+                raise NotFoundObjectException(object_name=self.object_name)
+        else:
+            return super().get_object()
 
 
 class CustomGenericAPIView(generics.GenericAPIView):

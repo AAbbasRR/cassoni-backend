@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 from utils.db.models import AbstractDateModel
 
@@ -21,4 +21,4 @@ class Options(AbstractDateModel):
     type = models.CharField(
         max_length=10, choices=TypeOptions.choices, unique=True, verbose_name=_("Type")
     )
-    value = RichTextField(config_name="special", verbose_name=_("Value"))
+    value = RichTextUploadingField(verbose_name=_("Value"))

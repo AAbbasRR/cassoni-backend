@@ -23,6 +23,7 @@ v1_urlpatterns = [
 
 urlpatterns = [
     path("admin/", base_admin.admin_site.urls),
+    path("ckeditor/", include('ckeditor_uploader.urls')),
     path("api/<str:version>/", include(v1_urlpatterns)),
 ]
 

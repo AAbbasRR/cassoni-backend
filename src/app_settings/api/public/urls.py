@@ -28,4 +28,9 @@ urlpatterns = [
         PublicContainerImageAPIView.as_view(),
         name="list_image_public",
     ),
+    path(
+        "image/detail/<slug:slug>/",
+        PublicContainerImageDetailAPIView.as_view(),
+        name="detail_image_public",
+    ),
 ]
